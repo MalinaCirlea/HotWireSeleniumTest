@@ -9,19 +9,21 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
-    String basePageURL = "https://www.hotwire.com/";
-    By flightsButton = By.xpath("//*[text()='Flights']");
-    //By.xpath("//a[@href='https://www.hotwire.com/flights/']");
+    String basePageURL = "https://www.hotwire.com/packages";
+    By flightButton = By.xpath("//*[text()='Hotel']");
+    By hotelButton = By.xpath("//*[text()='Flight']");
+    By carButton = By.xpath("//*[text()='Car']");
 
     public HomePage goToHomePage() {
         driver.get(basePageURL);
         return this;
     }
 
-    public FlightsUtils goToFlights() {
-        click(flightsButton);
-        driver.get("https://www.hotwire.com/flights/");
+    public FlightsUtils selectAllOptions() {
+        //click(flightButton);
+        //click(hotelButton);
+        click(carButton);
         return new FlightsUtils(driver);
     }
-
 }
+

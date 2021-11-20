@@ -1,6 +1,5 @@
 package pages;
 
-import com.sun.glass.ui.Size;
 import junit.framework.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,16 +15,16 @@ public class FlightsUtils extends BasePage {
     }
 
     By flyFromBy = By.className("uitk-faux-input");
-            //By.xpath("//*[text()='Leaving from']");
-            //By.xpath("//input[@placeholder='Origin city or airport']");
+    //By.xpath("//*[text()='Leaving from']");
+    //By.xpath("//input[@placeholder='Origin city or airport']");
     By flyToBy = By.xpath("//*[text()='Going to']");
-                    //By.xpath("//input[@placeholder='Destination city or airport']");
+    //By.xpath("//input[@placeholder='Destination city or airport']");
     By departingBy = By.id("input1-farefinder-flight-date");
-    By returningBy =By.id("input2-farefinder-flight-date");
-    By findAFlightBy =By.xpath("//*[text()='Find a flight']");
+    By returningBy = By.id("input2-farefinder-flight-date");
+    By findAFlightBy = By.xpath("//*[text()='Find a deal']");
     By flightsList = By.id("flightModuleList");
 
-    public FlightsUtils setUpFlight (String flyFrom, String flyTo) {
+    public FlightsUtils setUpFlight(String flyFrom, String flyTo) {
         fillIn(flyFromBy, flyFrom);
         fillIn(flyToBy, flyTo);
         return this;
@@ -43,17 +42,17 @@ public class FlightsUtils extends BasePage {
         Date toDate2 = calendar.getTime();
         String after20Days = dateFormat.format(toDate2);
         fillIn(departingBy, afterOneDay);
-        fillIn(returningBy,after20Days);
+        fillIn(returningBy, after20Days);
         return this;
     }
 
-    public FlightsUtils clickFindAFlight () {
+    public FlightsUtils clickFindAFlight() {
         click(findAFlightBy);
         return this;
     }
 
     public FlightsUtils expectAtLeastOneElementFound() {
-        boolean exists  = driver.findElements(flightsList).size() != 0;
+        boolean exists = driver.findElements(flightsList).size() != 0;
         Assert.assertEquals(exists, true);
         return this;
     }

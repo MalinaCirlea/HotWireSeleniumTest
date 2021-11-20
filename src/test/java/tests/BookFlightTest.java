@@ -9,8 +9,8 @@ public class BookFlightTest extends BaseTest {
     public void bookFlight() {
         HomePage homePage = new HomePage(driver);
         homePage.goToHomePage();
-        homePage.goToFlights().
-                setUpFlight("San Francisco International Airport (SFO)", "LAX").
+        homePage.selectAllOptions().
+                setUpFlight("sfo", "LAX").
                 setUpFlightDates().
                 clickFindAFlight().
                 expectAtLeastOneElementFound();
