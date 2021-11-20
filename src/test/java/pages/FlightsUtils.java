@@ -19,8 +19,8 @@ public class FlightsUtils extends BasePage {
     //By.xpath("//input[@placeholder='Origin city or airport']");
     By flyToBy = By.xpath("//*[text()='Going to']");
     //By.xpath("//input[@placeholder='Destination city or airport']");
-    By departingBy = By.id("input1-farefinder-flight-date");
-    By returningBy = By.id("input2-farefinder-flight-date");
+    By departingBy = By.id("d1-btn");
+    By returningBy = By.id("d2-btn");
     By findAFlightBy = By.xpath("//*[text()='Find a deal']");
     By flightsList = By.id("flightModuleList");
 
